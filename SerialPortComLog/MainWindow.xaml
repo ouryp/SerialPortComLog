@@ -1,0 +1,27 @@
+﻿<Window x:Class="SerialPortComLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerialPortComLog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="ScannerBox" Margin="10,10,546,53" ItemsSource="{Binding names}">
+
+        </ListBox>
+        <Button x:Name="ButtonScanner" Content="Scan" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Height="38" Width="108" Click="ButtonScanner_Click"/>
+        <Button x:Name="ButtonConnect" Content="Connect" HorizontalAlignment="Left" Margin="259,10,0,0" VerticalAlignment="Top" Height="42" Width="101" Click="ButtonConnect_Click"/>
+        <Border x:Name="BorderPeriph" BorderThickness="1" BorderBrush="Black" Margin="365,0,0,0">
+            <GroupBox x:Name="GroupeBoxPeriph" Header="GroupBox">
+                <StackPanel>
+                    <CheckBox x:Name="CheckBoxWhoIAm" Content="WhoIAm"/>
+                    <CheckBox x:Name="CheckBoxTtf" Content="Ttf"/>
+                    <Button x:Name="ButtonGetter" Content="Get" Width="80" Click="ButtonGetter_Click"/>
+                    <ListBox x:Name="ListBoxMessages" Height="100" ItemsSource="{Binding messages}"/>
+                </StackPanel>
+
+            </GroupBox>
+        </Border>
+    </Grid>
+</Window>
